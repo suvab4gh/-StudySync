@@ -169,7 +169,10 @@ def _extract_with_unstructured(pdf_bytes: bytes) -> str:
             tmp.write(pdf_bytes)
             tmp_path = tmp.name
 
-        elements = partition_pdf(filename=tmp_path, strategy="ocr_only")
+        try:
+            elements = partition_pdf(filename=tmp_path, strategy="ocr_only")
+        finally:
+            os.unlink(tmp_path)
         return "\n".join(str(el) for el in elements)
     except Exception as exc:  # noqa: BLE001
         logger.warning("unstructured OCR fallback failed: %s", exc)
