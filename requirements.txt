@@ -6,7 +6,7 @@
 # Web framework & server
 fastapi==0.115.12
 uvicorn[standard]==0.34.0
-python-multipart==0.0.20      # required for FastAPI file uploads
+python-multipart==0.0.22      # required for FastAPI file uploads
 
 # Data validation & ORM
 pydantic==2.11.2
@@ -19,7 +19,7 @@ anthropic==0.49.0
 
 # PDF extraction (digital + OCR)
 pdfplumber==0.11.5
-unstructured[pdf]==0.17.2
+unstructured[pdf]==0.18.18
 
 # Date parsing
 python-dateutil==2.9.0.post0
