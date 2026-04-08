@@ -1,5 +1,8 @@
 export async function apiFetch<T>(input: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(input, {
+  const apiUrl = import.meta.env.VITE_API_URL || "";
+  const url = apiUrl ? `${apiUrl}${input}` : input;
+  
+  const response = await fetch(url, {
     headers: {
       "Content-Type": "application/json",
       ...(init?.headers ?? {}),
@@ -16,7 +19,10 @@ export async function apiFetch<T>(input: string, init?: RequestInit): Promise<T>
 }
 
 export async function apiFormDataFetch<T>(input: string, body: FormData): Promise<T> {
-  const response = await fetch(input, {
+  const apiUrl = import.meta.env.VITE_API_URL || "";
+  const url = apiUrl ? `${apiUrl}${input}` : input;
+  
+  const response = await fetch(url, {
     method: "POST",
     body,
   });
