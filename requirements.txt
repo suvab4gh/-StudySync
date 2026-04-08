@@ -1,0 +1,40 @@
+# ──────────────────────────────────────────────────────────────
+# StudySync – Python dependencies
+# Generated for Python 3.10+
+# ──────────────────────────────────────────────────────────────
+
+# Web framework & server
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+python-multipart==0.0.22      # required for FastAPI file uploads
+
+# Data validation & ORM
+pydantic==2.11.2
+sqlmodel==0.0.22
+
+# AI / LLM structured extraction
+instructor==1.7.9
+openai==1.71.0
+anthropic==0.49.0
+
+# PDF extraction (digital + OCR)
+pdfplumber==0.11.5
+unstructured[pdf]==0.18.18
+
+# Date parsing
+python-dateutil==2.9.0.post0
+
+# Retry / resilience
+tenacity==9.1.2
+
+# Constraint solver (scheduling)
+ortools==9.12.4544
+
+# Utilities
+python-dotenv==1.1.0          # loads .env in local dev
+
+# ──────────────────────────────────────────────────────────────
+# Optional: database (uncomment for PostgreSQL via Render)
+# psycopg2-binary==2.9.10
+# alembic==1.14.1
+# ──────────────────────────────────────────────────────────────
